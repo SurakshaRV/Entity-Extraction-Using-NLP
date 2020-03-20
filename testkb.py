@@ -29,12 +29,12 @@ for i in range(len(content)):
         #print(tech_words)
 
 def ans_query(q):
-    if q=="are there any technologies used":
+    if q.lower()=="are there any technologies used":
         if tech_words:
             print('Yes')
         else:
             print('No technology is used')
-    elif q=="what are the technologies used":
+    elif q.lower()=="what are the technologies used":
         print(tech_words)
     else:
         for i in range(len(versions)):
