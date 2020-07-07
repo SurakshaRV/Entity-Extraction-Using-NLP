@@ -5,7 +5,7 @@ Objective of the project:
 2. To build a Technical Chatbot that answers technical questions related to the  uploaded PDF as well as answer generic queries asked by the user. 
 
 Datasets used:
-1. Aruba Clearpass Guides available at <a href=https://support.arubanetworks.com/Documentation/tabid/77/DMXModule/512/Default.aspx?EntryId=28161>Aruba Support Portal (ASP)</a> to train Spacy model to recognize technical words.
+1. Aruba Clearpass Guides available at <a href=https://support.arubanetworks.com/Documentation/tabid/77/DMXModule/512/Default.aspx?EntryId=28161> Aruba Support Portal (ASP) </a> to train Spacy model to recognize technical words.
 
 
 An NLP Model trained to do the following tasks.
