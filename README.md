@@ -36,4 +36,4 @@ This is an NLP Model trained to do the following tasks.
 4. Create a knowledge base to store all the tagged words and their versions 
 5. Answer user's queries.
 
-
+# For more information read the <a href='https://github.com/SurakshaRV/Entity-Extraction-Using-NLP/tree/master/Documentation'>documentation</a>
