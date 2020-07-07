@@ -15,5 +15,22 @@ Architecture/Design:
 ------------------------------------------------------------------------------------------------------------------------------------------
 ![architecture](https://github.com/SurakshaRV/Entity-Extraction-Using-NLP/blob/master/arch.PNG)
 
-Installation :rocket:
+Installation and Usage:
 -------------------------
+The requirements.txt in the repository defines the packages that are installed when building this project. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install them.
+
+```bash
+# Clone this repository
+$ git clone https://github.com/SurakshaRV/Entity-Extraction-Using-NLP
+
+# Go into the repository
+$ cd Entity-Extraction-Using-NLP
+
+# Install dependencies
+$ pip install -r requirements.txt 
+
+# Run the app
+$ python upload.py
+```
+
+
