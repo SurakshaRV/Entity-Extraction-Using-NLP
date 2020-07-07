@@ -1,5 +1,4 @@
 # Technical Chatbot
-------------------------
 This is an NLP Model trained to do the following tasks.
 1. Take the pdf file uploaded by the user
 2. Scrape the text 
