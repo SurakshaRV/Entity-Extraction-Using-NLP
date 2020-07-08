@@ -3,7 +3,7 @@ from textblob.classifiers import NaiveBayesClassifier, DecisionTreeClassifier
 import textblob
 import pickle
 
-def main2Query(query):
+def trainClassifier():
    generic_questions = ("Let's go","You never wanted to go out with 'me, did you?","Who knows?","What annoys you?",
                      "you've heard of him?","What were you doing?","Thank you anyway","No problem",
                      'She okay?',"Yes, I have a question.","What is your question?","What are your hobbies?",
@@ -66,13 +66,9 @@ def main2Query(query):
    training_set.extend(technical_questions)
 
    Qclassifier = NaiveBayesClassifier(training_set)
-   prob_dist = Qclassifier.prob_classify(query)
-   if(prob_dist.max()=="tech"):
-       return "tech"
-   elif(prob_dist.max()=="generic"):
-       return "generic"
-   else:
-       return None
+   save_classifier = open("naivebayes.pickle","wb")
+   pickle.dump(Qclassifier, save_classifier)
+   save_classifier.close()
 
 
 def mainQuery(query):
