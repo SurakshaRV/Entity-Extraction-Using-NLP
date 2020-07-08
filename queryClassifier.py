@@ -1,9 +1,11 @@
 
-from textblob.classifiers import NaiveBayesClassifier, DecisionTreeClassifier
+from textblob.classifiers import NaiveBayesClassifier
 import textblob
 import pickle
 
 def trainClassifier():
+   # custom dataset to train the naive bayes classifier model 
+   # there are only 2 classes - generic and technical
    generic_questions = ("Let's go","You never wanted to go out with 'me, did you?","Who knows?","What annoys you?",
                      "you've heard of him?","What were you doing?","Thank you anyway","No problem",
                      'She okay?',"Yes, I have a question.","What is your question?","What are your hobbies?",
@@ -17,7 +19,6 @@ def trainClassifier():
                      "What are you then?",'What are you working on?',"Who are you?","What is it like?",
                      "How do you work?","Who is your appointment with?","What languages do you like to use?",
         )
-
 
    technical_questions=("Clearpass is extended to IT systems using which API?",
                      "Which browsers are supported for ClearPass?",
@@ -57,14 +58,16 @@ def trainClassifier():
                      "what are the Supported Hypervisors for clearpass?"
                     )
 
-
+   # attach label to each sentence in dataset
    generic_questions = [(x, 'generic') for x in generic_questions]
    technical_questions = [(x, 'tech') for x in technical_questions]
 
+   #combine both to form a single training set
    training_set = []
    training_set.extend(generic_questions)
    training_set.extend(technical_questions)
-
+   
+   #train and save the model
    Qclassifier = NaiveBayesClassifier(training_set)
    save_classifier = open("naivebayes.pickle","wb")
    pickle.dump(Qclassifier, save_classifier)
@@ -72,10 +75,13 @@ def trainClassifier():
 
 
 def mainQuery(query):
+   # load the model
    classifier_file=open("naivebayes.pickle","rb")
    Qclassifier=pickle.load(classifier_file)
    classifier_file.close()
+   #pass the query asked by user to the classifier
    prob_dist = Qclassifier.prob_classify(query)
+   # find the class of passed query and return it
    if(prob_dist.max()=="tech"):
        return "tech"
    elif(prob_dist.max()=="generic"):
