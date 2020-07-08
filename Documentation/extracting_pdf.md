@@ -1,5 +1,4 @@
 ### Text scraping from .pdf files
 ----------------------------------------------------------------
-Method: pdfparser() 
+Method: pdfparser()
 Parameters: 
-Returns:
