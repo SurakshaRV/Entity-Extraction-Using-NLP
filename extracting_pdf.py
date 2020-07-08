@@ -8,7 +8,7 @@ from pdfminer.layout import LAParams
 import io
 
 def pdfparser(data):
-
+    '''extracts text from pdf files
     fp = open(data, 'rb')
     rsrcmgr = PDFResourceManager() #to store shared resources such as fonts or images
     retstr = io.StringIO() # Cast to StringIO object
@@ -24,8 +24,8 @@ def pdfparser(data):
         for page in PDFPage.get_pages(fp):
             interpreter.process_page(page)
             data =  retstr.getvalue()
+        # Write the scraped text to .txt file
         f.write(data.encode('cp850','replace').decode('cp850'))
     print("done")
 
-if __name__ == '__main__':
-    pdfparser('F:/HP/Aruba_CPPM_UserGuide.pdf')
+
