@@ -1,5 +1,5 @@
 ### Documentation of threeQuestions module.
 
-### Method : ansQuery()
-### Parameters : query asked by user and name of the uploaded .pdf file.
-### Returns : <a string> Response for the user query.
+**Method** : ansQuery()
+**Parameters** : query asked by user and name of the uploaded .pdf file.
+**Returns** : (a string) Response for the user query.
