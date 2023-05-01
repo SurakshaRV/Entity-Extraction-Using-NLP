@@ -4,6 +4,6 @@ spacy==2.1.9
 textblob==0.15.3
 fuzzywuzzy==0.18.0
 chatterbot==1.5.0
-flask==1.1.2
+flask==2.3.2
 pdfminer
 autocorrect
